@@ -1,0 +1,15 @@
+﻿@model HandsOnMVCUsingModelValidations.Models.User
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Welcome </h1>
+<h5>@Html.DisplayFor(m => m.Name)</h5>
+<h5> @Html.DisplayFor(m => m.Email)</h5>
+<h5> @Html.DisplayFor(m => m.DOB)</h5>
+<h5> @Html.DisplayFor(m => m.Country)</h5>
+<h5> @Html.DisplayFor(m => m.Mobile)</h5>
+<h5> @Html.DisplayFor(m => m.Uname)</h5>
+<h5> @Html.DisplayFor(m => m.Pwd)</h5>
+@Html.ActionLink("Logout", "Login", "User")
+

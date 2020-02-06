@@ -1,0 +1,9 @@
+﻿@model EmployeeMVCValidation.Models.Employee
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h5>Welcome @Html.DisplayFor(m => m.Name)</h5>
+    
+@Html.ActionLink("Logout", "Login", "User")
+

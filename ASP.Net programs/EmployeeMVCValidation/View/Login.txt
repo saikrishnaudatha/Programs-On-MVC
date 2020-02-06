@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered">
+        <tr>
+            <td>Employee Id</td>
+            <td>@Html.TextBox("eid")</td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+            <td>@Html.Password("pwd")</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Login" class="btn btn-primary"  />
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Sign Up New User" class="btn btn-primary" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <span class="text-danger">@ViewData["err"]</span>
+            </td>
+        </tr>
+
+    </table>
+}
+

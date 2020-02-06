@@ -1,0 +1,42 @@
+﻿@model EmployeeMVCValidation.Models.Employee
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <td> Employee ID</td>
+            <td> @Html.TextBoxFor(m => m.Eid) </td>    
+        </tr>
+
+        <tr>
+            <td>Employee Name</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+        </tr>
+
+        <tr>
+            <td>Designation</td>
+            <td>@Html.DropDownListFor(m => m.Designation, ViewBag.Designation as SelectList) </td>
+        </tr>
+
+        <tr>
+            <td>Project Name</td>
+            <td>@Html.DropDownListFor(m => m.Projectname, ViewBag.Projectname as SelectList) </td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+            <td>@Html.Password("Pwd")</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Register" />
+            </td>
+        </tr>
+    </table>
+}

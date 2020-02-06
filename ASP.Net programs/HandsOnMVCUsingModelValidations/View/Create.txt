@@ -1,0 +1,120 @@
+﻿@* For binding model to view, we use the below syntax *@
+
+@model HandsOnMVCUsingModelValidations.Models.User
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+
+@*@using (Html.BeginForm())
+    {
+        <table class="table">
+            <tr>
+                <td> Name </td>
+                <td> @Html.TextBoxFor(m=>m.Name) </td>*@    @*By using 'For', At run time the data entered for name will be assigned to model property i.e,Name *@
+                @*</tr>
+
+                    <tr>
+                        <td>DOB</td>
+                        <td>@Html.TextBoxFor(m=>m.DOB,null,new { @type = "Date" } )</td>
+                    </tr>
+
+                    <tr>
+                        <td>Email</td>
+                        <td>@Html.TextBoxFor(m=>m.Email)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mobile</td>
+                        <td>@Html.TextBoxFor(m=>m.Mobile)</td>
+                    </tr>
+
+                    <tr>*@
+                @*<td>Country</td>
+                    <td>@Html.DropDownListFor(m => m.Country, null, new SelectList(new string[] { "India", "US", "UK", "Canada" }))</td>*@
+
+                @*<td>Country</td>
+                        <td>@Html.DropDownListFor(m => m.Country, ViewBag.Country as SelectList) </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>UserName</td>
+                        <td>@Html.TextBox("Uname")</td>*@   @*By using normal TextBox, Model Property is directly assigned *@
+                        @*</tr>
+
+                                    <tr>
+                                        <td>Password</td>
+                                        <td>@Html.Password("Pwd")</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <input type="submit" value="Register"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            }*@
+@using (Html.BeginForm())
+{
+<table class="table">
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Name)</td>
+        <td>@Html.EditorFor(m => m.Name)</td>
+        <td>@Html.ValidationMessageFor(m => m.Name)</td>
+    </tr>
+
+   
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Email)</td>
+        <td>@Html.EditorFor(m => m.Email)</td>
+        <td>@Html.ValidationMessageFor(m => m.Email)</td>
+    </tr>
+
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.DOB)</td>
+        <td>@Html.EditorFor(m => m.DOB)</td>
+        <td>@Html.ValidationMessageFor(m => m.DOB)</td>
+    </tr>
+
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Mobile)</td>
+        <td>@Html.EditorFor(m => m.Mobile)</td>
+        <td>@Html.ValidationMessageFor(m => m.Mobile)</td>
+    </tr>
+
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Country)</td>
+        <td>@Html.EditorFor(m => m.Country)</td>
+        <td>@Html.ValidationMessageFor(m => m.Country)</td>
+    </tr>
+
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Uname)</td>
+        <td>@Html.EditorFor(m => m.Uname)</td>
+        <td>@Html.ValidationMessageFor(m => m.Uname)</td>
+    </tr>
+
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Pwd)</td>
+        <td>@Html.EditorFor(m => m.Pwd)</td>
+        <td>@Html.ValidationMessageFor(m => m.Pwd)</td>
+    </tr>
+
+
+    <tr>
+        <td colspan="3">
+            <input type="submit" value="Login" />
+        </td>
+    </tr>
+</table>
+ }

@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "CreateDashBoard";
+}
+
+<h2>Welcome To CreateDashBoard</h2>
+
+
+<br />
+
+@*<h4 class="text-right text-danger">Welcome @ViewBag.uname</h4>*@
+
+@*To access Session Variables directly on View Page*@
+@if (Context.Session.GetString("UName") != null)
+{
+<h4 class="text-right text-primary" >@Context.Session.GetString("UName").ToString()</h4>
+}
+<h5 class="text-right text-danger">Your Last Login @ViewBag.ll</h5>
